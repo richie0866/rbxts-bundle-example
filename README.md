@@ -15,7 +15,7 @@ loadstring(game:HttpGetAsync("https://github.com/richie0866/rbxts-bundle-example
 
 ```lua
 -- Run a specific release
-loadstring(game:HttpGetAsync("https://github.com/richie0866/rbxts-bundle-example/releases/download/0.1.0/main.lua"))()
+loadstring(game:HttpGetAsync("https://github.com/richie0866/rbxts-bundle-example/releases/download/1.0.0/main.lua"))()
 ```
 
 ### 📌 Prerequisites
