@@ -15,7 +15,7 @@ loadstring(game:HttpGetAsync("https://github.com/richie0866/rbxts-bundle-example
 
 ```lua
 -- Run a specific release
-loadstring(game:HttpGetAsync("https://github.com/richie0866/rbxts-bundle-example/releases/download/0.2.0-alpha/main.lua"))()
+loadstring(game:HttpGetAsync("https://github.com/richie0866/rbxts-bundle-example/releases/download/0.1.0/main.lua"))()
 ```
 
 ### 📌 Prerequisites
@@ -50,5 +50,3 @@ pnpm bundle
 ### ⚠️ Notes
 
 -   Roblox-TS compiles ternary operators to Luau if-then-else expressions, which may not be supported in some environments.
-
--   150 KB for a text box
