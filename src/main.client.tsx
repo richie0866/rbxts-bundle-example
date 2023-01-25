@@ -6,7 +6,7 @@ import App from "App";
 import { configureStore } from "store";
 
 function canAccessCoreGui() {
-	return pcall(() => game.GetService("CoreGui") !== undefined)[0];
+	return pcall(() => game.GetService("CoreGui").Name !== undefined)[0];
 }
 
 withHookDetection(Roact);
@@ -19,6 +19,6 @@ const tree = Roact.mount(
 	"App",
 );
 
-Players.LocalPlayer?.CharacterAdded.Connect(() => {
+Players.LocalPlayer.CharacterRemoving.Connect(() => {
 	Roact.unmount(tree);
 });
