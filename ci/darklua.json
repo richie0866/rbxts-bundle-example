@@ -19,8 +19,7 @@
 		"remove_unused_while",
 		{
 			"rule": "rename_variables",
-			"include_functions": true,
-			"globals": ["$default", "__instance", "__lua"]
+			"include_functions": true
 		}
 	]
 }
