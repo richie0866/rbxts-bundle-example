@@ -5,19 +5,19 @@ local currentlyLoading = {}
 local function runModule(object, context)
 	currentlyLoading[context] = object
 
-	local currentModule = object
+	local currentObject = object
 	local depth = 0
 
-	while currentModule do
+	while currentObject do
 		depth = depth + 1
-		currentModule = currentlyLoading[currentModule]
+		currentObject = currentlyLoading[currentObject]
 
-		if currentModule == object then
-			local str = currentModule.Name -- Get the string traceback
+		if currentObject == object then
+			local str = currentObject.Name -- Get the string traceback
 
 			for _ = 1, depth do
-				currentModule = currentlyLoading[currentModule]
-				str = str .. "  ⇒ " .. currentModule.Name
+				currentObject = currentlyLoading[currentObject]
+				str = str .. "  ⇒ " .. currentObject.Name
 			end
 
 			error("Failed to load '" .. object.Name .. "'; Detected a circular dependency chain: " .. str, 2)
@@ -65,7 +65,7 @@ local function __lua(name, className, path, parentPath, callback)
 			script = rbx,
 			require = function(object)
 				if modules[object] then
-					return requireModule(object, path)
+					return requireModule(object, rbx)
 				else
 					return require(object)
 				end
